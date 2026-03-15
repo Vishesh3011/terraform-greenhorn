@@ -8,7 +8,7 @@ variable "var_name" {
 }
 ```
 
-Terraform supports common variablesl like string, number, bool, list, set, maps, object, and tuple. 
+Terraform supports common variables like string, number, bool, list, set, maps, object, and tuple. 
 
 Variables must be stored in `variables.tfvars` file which gets applied during the command `terraform apply`. If in a different file, we can use the command:<br>
 `terraform apply -var-file=another-variable-file.tfvars`

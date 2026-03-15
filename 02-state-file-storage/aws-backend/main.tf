@@ -5,9 +5,9 @@ terraform {
   ## TO SWITCH FROM LOCAL BACKEND TO REMOTE AWS BACKEND
   #############################################################
   # backend "s3" {
-  #   bucket         = "devops-directive-tf-state" # REPLACE WITH YOUR BUCKET NAME
-  #   key            = "03-basics/import-bootstrap/terraform.tfstate"
-  #   region         = "us-east-1"
+  #   bucket         = "vishesh-has-his-bucket-1"
+  #   key            = "02-state-file-storage/terraform.tfstate"
+  #   region         = "ap-southeast-2"
   #   dynamodb_table = "terraform-state-locking"
   #   encrypt        = true
   # }
@@ -21,11 +21,11 @@ terraform {
 }
 
 provider "aws" {
-  region = "us-east-1"
+  region = "ap-southeast-2"
 }
 
 resource "aws_s3_bucket" "terraform_state" {
-  bucket        = "devops-directive-tf-state" # REPLACE WITH YOUR BUCKET NAME
+  bucket        = "vishesh-has-his-bucket-1"
   force_destroy = true
 }
 
