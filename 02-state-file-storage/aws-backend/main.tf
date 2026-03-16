@@ -4,13 +4,13 @@ terraform {
   ## YOU WILL UNCOMMENT THIS CODE THEN RERUN TERRAFORM INIT
   ## TO SWITCH FROM LOCAL BACKEND TO REMOTE AWS BACKEND
   #############################################################
-  # backend "s3" {
-  #   bucket         = "vishesh-has-his-bucket-1"
-  #   key            = "02-state-file-storage/terraform.tfstate"
-  #   region         = "ap-southeast-2"
-  #   dynamodb_table = "terraform-state-locking"
-  #   encrypt        = true
-  # }
+  backend "s3" {
+    bucket         = "vishesh-has-his-bucket-2"
+    key            = "02-state-file-storage/terraform.tfstate"
+    region         = "ap-southeast-2"
+    dynamodb_table = "terraform-state-locking"
+    encrypt        = true
+  }
 
   required_providers {
     aws = {
@@ -25,7 +25,7 @@ provider "aws" {
 }
 
 resource "aws_s3_bucket" "terraform_state" {
-  bucket        = "vishesh-has-his-bucket-1"
+  bucket        = "vishesh-has-his-bucket-2"
   force_destroy = true
 }
 
